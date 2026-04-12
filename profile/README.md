@@ -17,6 +17,7 @@ with a native performance:
  * [**SGE**](https://github.com/kubuszok/sge) - Scala Game Engine and extensions - port of LibGDX and its extensions to Scala
  * [**SGE native components**](https://github.com/kubuszok/sge-native-components) - Rust ports of C++ libraries used by LibGDX and its extensions.
    Builds artifacts used by SGE via Panama on JVM and native binding on Scala Native
+ * [**SGE ANGLE natives**](https://github.com/kubuszok/sge-angle-natives) - Builds ANGLE artifacts used by SGE via Panama on JVM and native binding on Scala Native
 
 ## Static Site Generator (SSG)
 
@@ -41,3 +42,4 @@ shipping native components with your libraries to enable the above:
    - a sbt plugin that packages jlink for multiple operating systems
    - a CURL provider for Scala Native (so that your Scala Native libraries depending on libcurl without an additional installation)
  * [**curl-natives**](https://github.com/kubuszok/curl-natives) - Builds native curl bindings for Scala Native
+ * [**scala-sax-parser**](https://github.com/kubuszok/scala-sax-parser) - cleanroom implementation of a SAX parser for Scala Native and Scala.js
