@@ -27,6 +27,8 @@ The ecosystem aiming to provide a static site generator for Scala, build on top 
 
  * [**SSG (Static Site Generator)**](https://github.com/kubuszok/ssg) - components porting established OSS libraries to Scala
    (flexmark-java, liqp, dart-sass, jekyll-minifier, ...)
+ * [**SSE native providers**](https://github.com/kubuszok/sse-native-providers) - Bundled tree-sitter binaries and WASM
+ * [**tree-sitter-natives**](https://github.com/kubuszok/tree-sitter-natives) - Builds trss-sitter artifacts used by SSE via Panama on JVM and native binding on Scala Native, and WASM on Scala.js
 
 > [!note]
 > SSG is a work in progress - it hasn't been released yet.
@@ -46,3 +48,21 @@ shipping native components with your libraries to enable the above:
 
 > [!note]
 > Multiarch-scala is a work in progress - it hasn't been released yet.
+
+## Scala 2.13 <-> Scala 3 migration helpers
+
+Libraries created to unblock cross-compilation of services writeen in Scala 2.13, which are relying on libraries missing
+partial/full support on Scala 3.
+
+Not aimed to use them as a permanent solution, but intended to be good enough to cross-compile existing 2.13 services with Scala 3,
+migrate whole codebase gradually, cross-compiling 1 service at a time, and maintain dual release long enough to make dropping 2.13 safe.
+
+ * [scala-newtype-compat](https://github.com/kubuszok/scala-newtype-compat) - compatibility layer which:
+   - reimplements Scala 2 macro annotations as a compiler plugin
+   - uses Scala 2.13 artifacts in Scala 3 via for3_use2.13 via our (empty) artifact
+ * [refined-compat](https://github.com/kubuszok/refined-compat) - compatibility layer which:
+   - reimplements `import eu.timepit.refined.auto._` using Hearth under `import hearth.refined.auto._` to allow 2.13/3 cross-compilation
+   - reimplements `import eu.timepit.refined.refineMV` using Hearth under `import hearth.refined.refineMV` to allow 2.13/3 cross-compilation
+
+> [!note]
+> Migration helpers is a work in progress.
