@@ -27,7 +27,7 @@ The ecosystem aiming to provide a static site generator for Scala, build on top 
 
  * [**SSG (Static Site Generator)**](https://github.com/kubuszok/ssg) - components porting established OSS libraries to Scala
    (flexmark-java, liqp, dart-sass, jekyll-minifier, ...)
- * [**SSE native providers**](https://github.com/kubuszok/sse-native-providers) - Bundled tree-sitter binaries and WASM
+ * [**SSG native providers**](https://github.com/kubuszok/ssg-native-providers) - Bundled tree-sitter binaries and WASM
  * [**tree-sitter-natives**](https://github.com/kubuszok/tree-sitter-natives) - Builds trss-sitter artifacts used by SSE via Panama on JVM and native binding on Scala Native, and WASM on Scala.js
 
 > [!note]
