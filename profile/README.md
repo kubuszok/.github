@@ -6,6 +6,7 @@ The ecosystem aiming to advance the typeclass-derivation and metaprogramming sta
    macro-use cases, allow sharing the logic between 2.13 and 3.3+, establish good practices and patterns enabling better libraries UX
  * [**Kindlings**](https://github.com/kubuszok/kindlings) - the incubator for Hearth-based libraries. Let us test APIs in practice, let users
    test our solutions and give us feedback, shows how Hearth can be used in practice by both humans and LLMs
+ * [**Pipez**](https://github.com/kubuszok/pipez) - rewriting data with an arbitrary effect. It handles the use case droped by [Chimney](https://github.com/scalalandio/chimney) (`TransformerF`), while also serving as a testing ground for techinques that will land in Chimney (currently, spearheading Hearth as a new foundation)
 
 ## Scala Game Engine (SGE)
 
