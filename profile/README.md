@@ -8,6 +8,21 @@ The ecosystem aiming to advance the typeclass-derivation and metaprogramming sta
    test our solutions and give us feedback, shows how Hearth can be used in practice by both humans and LLMs
  * [**Pipez**](https://github.com/kubuszok/pipez) - rewriting data with an arbitrary effect. It handles the use case droped by [Chimney](https://github.com/scalalandio/chimney) (`TransformerF`), while also serving as a testing ground for techinques that will land in Chimney (currently, spearheading Hearth as a new foundation)
 
+## Scala 2.13 <-> Scala 3 migration helpers
+
+Libraries created to unblock cross-compilation of services writeen in Scala 2.13, which are relying on libraries missing
+partial/full support on Scala 3.
+
+Not aimed to use them as a permanent solution, but intended to be good enough to cross-compile existing 2.13 services with Scala 3,
+migrate whole codebase gradually, cross-compiling 1 service at a time, and maintain dual release long enough to make dropping 2.13 safe.
+
+ * [scala-newtype-compat](https://github.com/kubuszok/scala-newtype-compat) - compatibility layer which:
+   - reimplements Scala 2 macro annotations as a compiler plugin
+   - uses Scala 2.13 artifacts in Scala 3 via for3_use2.13 via our (empty) artifact
+ * [refined-compat](https://github.com/kubuszok/refined-compat) - compatibility layer which:
+   - reimplements `import eu.timepit.refined.auto._` using Hearth under `import hearth.refined.auto._` to allow 2.13/3 cross-compilation
+   - reimplements `import eu.timepit.refined.refineMV` using Hearth under `import hearth.refined.refineMV` to allow 2.13/3 cross-compilation
+
 ## Scala Game Engine (SGE)
 
 The ecosystem aiming to port LibGDX and its extensions to Scala, to enable writing desktop/mobile/browser games in Scala,
@@ -49,21 +64,3 @@ shipping native components with your libraries to enable the above:
 
 > [!note]
 > Multiarch-scala is a work in progress - it hasn't been released yet.
-
-## Scala 2.13 <-> Scala 3 migration helpers
-
-Libraries created to unblock cross-compilation of services writeen in Scala 2.13, which are relying on libraries missing
-partial/full support on Scala 3.
-
-Not aimed to use them as a permanent solution, but intended to be good enough to cross-compile existing 2.13 services with Scala 3,
-migrate whole codebase gradually, cross-compiling 1 service at a time, and maintain dual release long enough to make dropping 2.13 safe.
-
- * [scala-newtype-compat](https://github.com/kubuszok/scala-newtype-compat) - compatibility layer which:
-   - reimplements Scala 2 macro annotations as a compiler plugin
-   - uses Scala 2.13 artifacts in Scala 3 via for3_use2.13 via our (empty) artifact
- * [refined-compat](https://github.com/kubuszok/refined-compat) - compatibility layer which:
-   - reimplements `import eu.timepit.refined.auto._` using Hearth under `import hearth.refined.auto._` to allow 2.13/3 cross-compilation
-   - reimplements `import eu.timepit.refined.refineMV` using Hearth under `import hearth.refined.refineMV` to allow 2.13/3 cross-compilation
-
-> [!note]
-> Migration helpers is a work in progress.
