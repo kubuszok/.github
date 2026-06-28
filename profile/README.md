@@ -16,10 +16,10 @@ partial/full support on Scala 3.
 Not aimed to use them as a permanent solution, but intended to be good enough to cross-compile existing 2.13 services with Scala 3,
 migrate whole codebase gradually, cross-compiling 1 service at a time, and maintain dual release long enough to make dropping 2.13 safe.
 
- * [scala-newtype-compat](https://github.com/kubuszok/scala-newtype-compat) - compatibility layer which:
+ * [**scala-newtype-compat**](https://github.com/kubuszok/scala-newtype-compat) - compatibility layer which:
    - reimplements Scala 2 macro annotations as a compiler plugin
    - uses Scala 2.13 artifacts in Scala 3 via for3_use2.13 via our (empty) artifact
- * [refined-compat](https://github.com/kubuszok/refined-compat) - compatibility layer which:
+ * [**refined-compat**](https://github.com/kubuszok/refined-compat) - compatibility layer which:
    - reimplements `import eu.timepit.refined.auto._` using Hearth under `import hearth.refined.auto._` to allow 2.13/3 cross-compilation
    - reimplements `import eu.timepit.refined.refineMV` using Hearth under `import hearth.refined.refineMV` to allow 2.13/3 cross-compilation
 
